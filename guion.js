@@ -6,7 +6,7 @@
 // la etiqueta entre paréntesis las une con su nombre.
 const NOMBRES = {
   oficina: 'Laura',
-  dueno: 'Alex',
+  dueno: 'Alex y Mario',
   viajera: 'Camila',
   viajera2: 'Valentina',
 };
@@ -16,9 +16,9 @@ const V1 = `${N.viajera} (V1)`;
 const V2 = `${N.viajera2} (V2)`;
 
 const PERSONAS = {
-  oficina: { nombre: N.oficina, rol: 'la oficina', equipo: 'escritorio', frase: 'Abro las salidas y valido los pagos.', recorridos: 'R1 y R4' },
-  viajera: { nombre: N.viajera, etiqueta: 'Viajera #1', corta: 'V1', rol: 'la viajera', equipo: 'celular', frase: 'Me inscribo, pago y miro mi viaje.', recorridos: 'R2 y R3' },
-  dueno: { nombre: N.dueno, rol: 'el dueño', equipo: 'celular', frase: 'Miro cómo va el negocio.', recorridos: 'R5' },
+  oficina: { nombre: N.oficina, rol: 'administración', equipo: 'escritorio', frase: 'Abro las salidas y valido los pagos.', recorridos: 'R1 y R4' },
+  viajera: { nombre: N.viajera, etiqueta: 'Viajera #1', corta: 'V1', rol: 'viajera', equipo: 'celular', frase: 'Me inscribo, pago y miro mi viaje.', recorridos: 'R2 y R3' },
+  dueno: { nombre: N.dueno, rol: 'CEOs', equipo: 'celular', frase: 'Miramos cómo va el negocio.', recorridos: 'R5' },
 };
 
 // Medidas de cada PNG en px de pantalla (el archivo va a 1,5× o 2×).
@@ -29,7 +29,7 @@ const RECORRIDOS = [
     titulo: `${N.oficina} abre una salida e invita`,
     persona: 'oficina',
     equipo: 'escritorio',
-    entrada: `Soy ${N.oficina}, de la oficina. Hoy abro la salida al Cocuy y le mando el enlace a la gente.`,
+    entrada: `Soy ${N.oficina}, de administración. Hoy abro la salida al Cocuy y le mando el enlace a la gente.`,
     pasos: [
       { codigo: 'R1.1', pantalla: 'Salidas', img: 'r1-1.png', w: 1440, h: 900, tipo: 'Nuevo',
         texto: 'Aquí veo las próximas salidas, de la más cercana a la más lejana, y qué le falta a cada una. El semáforo me dice por dónde empezar.',
@@ -72,7 +72,7 @@ const RECORRIDOS = [
     titulo: `${V1} paga`,
     persona: 'viajera',
     equipo: 'celular',
-    entrada: 'Hice una transferencia de $780.000. Ahora le aviso a la oficina.',
+    entrada: 'Hice una transferencia de $780.000. Ahora le aviso a administración.',
     pasos: [
       // Misma pantalla que R2.5 (en el diseño es el mismo Mi viaje).
       { codigo: 'R3.1', pantalla: 'Mi viaje', img: 'r2-5.png', w: 390, h: 1154, tipo: 'Alternativa',
@@ -82,7 +82,7 @@ const RECORRIDOS = [
         texto: 'Escribo el monto, elijo cómo pagué y subo la foto o el PDF del comprobante.',
         boton: 'Enviar' },
       { codigo: 'R3.3', pantalla: 'Comprobante enviado', img: 'r3-3.png', w: 390, h: 844, tipo: 'Alternativa',
-        texto: 'Listo. Mi saldo no cambia hasta que la oficina lo revise; me avisan cuando esté validado.',
+        texto: 'Listo. Mi saldo no cambia hasta que administración lo revise; me avisan cuando esté validado.',
         boton: 'Ver mi voucher (desde Mi viaje)' },
       { codigo: 'R3.4', pantalla: 'Voucher hoja 1', img: 'r3-4.png', w: 816, h: 1128, tipo: 'Alternativa', documento: true,
         texto: 'Mi voucher resume la reserva: quién viaja, qué he pagado, qué falta, qué incluye el plan y qué llevar. Me llega por correo y lo veo en el celular.',
@@ -94,7 +94,7 @@ const RECORRIDOS = [
     titulo: `${N.oficina} valida el pago y revisa la salida`,
     persona: 'oficina',
     equipo: 'escritorio',
-    entrada: `De vuelta en la oficina. Llegó el comprobante de ${V1}.`,
+    entrada: `De vuelta en administración. Llegó el comprobante de ${V1}.`,
     pasos: [
       { codigo: 'R4.1', pantalla: 'Inicio y alertas', img: 'r4-1.png', w: 1440, h: 900, tipo: 'Nuevo',
         texto: 'Al entrar veo lo que no puede esperar: 2 comprobantes por validar, 3 salidas que urgen y 1 devolución abierta.',
@@ -112,10 +112,10 @@ const RECORRIDOS = [
   },
   {
     id: 'r5',
-    titulo: `${N.dueno} mira el negocio`,
+    titulo: `${N.dueno} miran el negocio`,
     persona: 'dueno',
     equipo: 'celular',
-    entrada: `Soy ${N.dueno}, el dueño. No necesito entrar al detalle: quiero saber cómo va el negocio desde el celular.`,
+    entrada: `Somos ${N.dueno}, los CEOs. No necesitamos entrar al detalle: queremos saber cómo va el negocio desde el celular.`,
     pasos: [
       { codigo: 'R5.1', pantalla: 'Panel En vivo', img: 'r5-1.png', w: 390, h: 844, tipo: 'Nuevo',
         texto: 'Pesos y dólares van por separado: lo recaudado, lo que falta por cobrar y cuántos viajeros están listos. Abajo, las próximas salidas y cómo van.',
@@ -133,7 +133,7 @@ const RECORRIDOS = [
 const PORTADA = {
   eyebrow: 'XPERIENCIA · BORRADOR 1',
   titulo: 'Una salida al Cocuy, contada por quien usa la app',
-  texto: 'Este borrador muestra cómo trabajarían con la app nueva la oficina, los viajeros y el dueño. Son cinco recorridos cortos. Todos los datos son de prueba.',
+  texto: 'Este borrador muestra cómo trabajarían con la app nueva administración, los viajeros y los CEOs. Son cinco recorridos cortos. Todos los datos son de prueba.',
   boton: 'Empezar',
   pie: 'Cómo se mira: flechas del teclado, toque o deslizar. Toca una pantalla para ampliarla.',
 };
@@ -152,7 +152,7 @@ const PORQUE = {
   ],
   leyenda: [
     { tipo: 'Alternativa', texto: 'nuestra propuesta para algo que ya existe (la app del viajero, el voucher).' },
-    { tipo: 'Nuevo', texto: 'pantalla que no existía (oficina y panel del dueño).' },
+    { tipo: 'Nuevo', texto: 'pantalla que no existía (administración y panel de los CEOs).' },
   ],
 };
 
@@ -160,7 +160,7 @@ const CIERRE = {
   titulo: 'Esto es un borrador para revisar juntos',
   pasos: [
     'Revisan los cinco recorridos y anotan lo que cambiarían.',
-    `Hacemos con ${N.oficina} el mapeo de las acciones de la oficina.`,
+    `Hacemos con ${N.oficina} el mapeo de las acciones de administración.`,
   ],
   fuera: 'No están en este borrador: olvidé mi contraseña, Mi nivel, Destinos, Próximas salidas, el paso 4 de la inscripción, registrar un abono a mano, cancelar y devolver.',
   boton: 'Volver a empezar',

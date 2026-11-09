@@ -244,7 +244,9 @@
   const puntos = document.getElementById('puntos');
   puntos.innerHTML = RECORRIDOS.map((r, i) => `<button type="button" class="punto" data-salto="${r.id}"
       aria-label="R${i + 1}: ${r.titulo}" title="R${i + 1}: ${r.titulo}">
-      <span class="punto__circulo" aria-hidden="true"></span><span class="punto__txt" aria-hidden="true">R${i + 1}</span></button>`).join('');
+      <span class="punto__circulo" aria-hidden="true"></span><span class="punto__txt" aria-hidden="true">R${i + 1}</span></button>`).join('')
+    + `<button type="button" class="punto" data-salto="porque" aria-label="${PORQUE.titulo}" title="${PORQUE.titulo}">
+      <span class="punto__circulo" aria-hidden="true"></span><span class="punto__txt" aria-hidden="true">D</span></button>`;
 
   const progreso = document.getElementById('progreso');
   const contador = document.getElementById('contador');
