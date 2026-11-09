@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xperiencia · Recorridos del borrador 1</title>
+  <meta name="description" content="Cinco recorridos cortos por la app nueva de Xperiencia: la oficina, los viajeros y el dueño. Datos de prueba.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1E1E1E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%231E1E1E'/%3E%3Cpath d='M4 19 9.5 6l3.5 7 2.5-4L20 19Z' fill='none' stroke='%23FF9700' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&family=Poppins:wght@400;500&display=swap">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <div class="barra__progreso" aria-hidden="true"><span id="progreso"></span></div>
+    <button class="marca" type="button" data-salto="inicio" aria-label="Ir a la portada">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20 9.5 5l3.7 7.4L16 8l5 12Z"/></svg>
+      <span class="marca__txt">XPERIENCIA</span>
+    </button>
+    <nav class="puntos" id="puntos" aria-label="Saltar a un recorrido"></nav>
+    <p class="contador" id="contador" aria-hidden="true"></p>
+  </header>
+
+  <main class="escenario" id="escenario">
+    <noscript><p class="sin-js">Esta presentación necesita JavaScript.</p></noscript>
+  </main>
+
+  <p class="solo-lector" id="anuncio" aria-live="polite"></p>
+
+  <dialog class="zoom" id="zoom" aria-labelledby="zoom-titulo">
+    <div class="zoom__barra">
+      <p class="zoom__titulo" id="zoom-titulo"></p>
+      <button class="btn btn--secundario btn--chico" type="button" id="zoom-tam">Más grande</button>
+      <button class="btn btn--secundario btn--chico" type="button" id="zoom-cerrar">Cerrar</button>
+    </div>
+    <div class="zoom__vista" id="zoom-vista"><img id="zoom-img" alt=""></div>
+  </dialog>
+
+  <script src="guion.js"></script>
+  <script src="presentacion.js"></script>
+</body>
+</html>
